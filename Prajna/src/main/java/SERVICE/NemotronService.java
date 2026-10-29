@@ -6,6 +6,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.security.PrivateKey;
 import java.time.Duration;
 
 import org.json.JSONArray;
@@ -26,7 +27,7 @@ public class NemotronService {
     public String analyzeResume(String resumeText)
             throws IOException, InterruptedException {
 
-        String apiKey = System.getenv("nemotron");
+       String apiKey = System.getenv("nemotron");
 
         if (apiKey == null || apiKey.isBlank()) {
             throw new IllegalStateException(
@@ -38,6 +39,7 @@ public class NemotronService {
                 .put("role", "user")
                 .put("content",
                         "Analyze the following resume for software developer roles. "
+                		    +  " give the ats score of the resume base upon the format and section structure" 
                         + "Identify technical skills, strengths, missing skills, "
                         + "improvements, and suitable job roles. "
                         + "If a job description is included, compare the resume "
