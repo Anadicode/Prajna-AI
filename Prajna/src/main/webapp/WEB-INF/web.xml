@@ -10,8 +10,28 @@
   	<description></description>
   	<servlet-class>SERVLET.ResumeAnalysisServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>JobFindingServlet</servlet-name>
+  	<display-name>JobFindingServlet</display-name>
+  	<description></description>
+  	<servlet-class>SERVLET.JobFindingServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ResumeCredibilityServlet</servlet-name>
+  	<display-name>ResumeCredibilityServlet</display-name>
+  	<description></description>
+  	<servlet-class>SERVLET.ResumeCredibilityServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ResumeAnalysisServlet</servlet-name>
   	<url-pattern>/ResumeAnalysisServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>JobFindingServlet</servlet-name>
+  	<url-pattern>/JobFindingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ResumeCredibilityServlet</servlet-name>
+  	<url-pattern>/ResumeCredibilityServlet</url-pattern>
   </servlet-mapping>
 </web-app>

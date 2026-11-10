@@ -73,6 +73,8 @@ public class NemotronService {
         }
 
         JSONObject result = new JSONObject(response.body());
+        
+        System.out.println(result);
 
         return result.getJSONArray("choices")
                 .getJSONObject(0)
