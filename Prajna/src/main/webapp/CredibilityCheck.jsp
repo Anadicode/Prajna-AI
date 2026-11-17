@@ -22,34 +22,64 @@
             min-height: 100vh;
         }
 
+        /* Fixed Navigation Bar */
         nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             min-height: 76px;
-            padding: 0 8%;
+            padding: 0 6%;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 25px;
             background: #0c1220;
             border-bottom: 1px solid #20283a;
+            z-index: 1000;
         }
 
         .logo {
+            color: #f8fafc;
             font-size: 24px;
             font-weight: 750;
             letter-spacing: -1px;
+            text-decoration: none;
+            white-space: nowrap;
         }
 
         .logo span {
             color: #8b7cff;
         }
 
-        .nav-label {
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
             color: #aab4c8;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 550;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #a99bff;
+        }
+
+        .nav-links a:last-child {
+            color: #a99bff;
         }
 
         main {
             width: min(900px, 92%);
-            margin: 55px auto;
+            margin: 131px auto 55px;
         }
 
         .intro {
@@ -267,22 +297,42 @@
             padding: 0 15px 28px;
         }
 
+        @media (max-width: 900px) {
+            nav {
+                padding: 16px 5%;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 16px 22px;
+            }
+
+            main {
+                margin-top: 155px;
+            }
+        }
+
         @media (max-width: 600px) {
             nav {
-                padding: 0 5%;
-                min-height: 65px;
+                padding: 18px 4%;
             }
 
             .logo {
                 font-size: 21px;
             }
 
-            .nav-label {
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
                 font-size: 12px;
             }
 
             main {
-                margin: 35px auto;
+                margin: 175px auto 35px;
             }
 
             .card {
@@ -303,8 +353,17 @@
 <body>
 
 <nav>
-    <div class="logo">Resume<span>AI</span></div>
-    <div class="nav-label">AI-powered career insights</div>
+    <a href="<%= application.getContextPath() %>/" class="logo">
+        Resume<span>AI</span>
+    </a>
+
+    <div class="nav-links">
+        <a href="<%= application.getContextPath() %>/">Resume Analyzer</a>
+        <a href="<%= application.getContextPath() %>/CompaireResume">Resume Comparison</a>
+        <a href="<%= application.getContextPath() %>/JobFinding">Job Finding</a>
+        <a href="<%= application.getContextPath() %>/ProjectRecomendation">Project Recommendation</a>
+        <a href="<%= application.getContextPath() %>/ResumeCredibility">Resume Credibility</a>
+    </div>
 </nav>
 
 <main>

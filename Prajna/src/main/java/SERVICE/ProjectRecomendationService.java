@@ -166,8 +166,8 @@ public class ProjectRecomendationService {
                         .put(new JSONObject()
                                 .put("role", "user")
                                 .put("content", userPrompt)))
-                .put("max_tokens", 4000)
-                .put("temperature", 0.4);
+                .put("max_tokens", 8000);
+                //.put("temperature", 0.4);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(API_URL))
